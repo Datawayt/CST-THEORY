@@ -6,7 +6,132 @@
     <title>Critical Symmetry Theory (CST) - Riemann Hypothesis Solution Framework</title>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* [Keep all existing CSS styles from previous code] */
+        body {
+            font-family: 'Roboto Mono', monospace;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+
+        header {
+            background: #0f4b5c;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-family: 'Merriweather', serif;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            background-color: #2c3e50;
+            padding: 10px 0;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.1em;
+            font-family: 'Roboto Mono', monospace;
+            transition: background 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background-color: #34495e;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .theory-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .theory-card h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            border-bottom: 2px solid #e1e1e1;
+            padding-bottom: 10px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .definition-box {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .definition-box h3 {
+            font-size: 1.4em;
+            color: #2980b9;
+        }
+
+        .definition-box p {
+            font-size: 1em;
+            line-height: 1.6;
+        }
+
+        .math {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 1.5em;
+            color: #8e44ad;
+            margin: 10px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: white;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-menu {
+                flex-direction: column;
+            }
+
+            .nav-link {
+                margin: 10px 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -15,6 +140,7 @@
         <a href="#postulates" class="nav-link">Postulates</a>
         <a href="#conjectures" class="nav-link">Conjectures</a>
         <a href="#applications" class="nav-link">Applications</a>
+        <a href="#challenges" class="nav-link">Challenges</a>
     </nav>
 
     <header>
@@ -23,7 +149,6 @@
     </header>
 
     <div class="container">
-        <!-- Expanded Introduction Section -->
         <section id="introduction">
             <div class="theory-card">
                 <h2>1. Core Principles</h2>
@@ -49,7 +174,6 @@
             </div>
         </section>
 
-        <!-- Foundational Postulates Section -->
         <section id="postulates">
             <div class="theory-card">
                 <h2>2. Foundational Postulates</h2>
@@ -73,7 +197,6 @@
             </div>
         </section>
 
-        <!-- Conjectures Section -->
         <section id="conjectures">
             <div class="theory-card">
                 <h2>3. Resolved Conjectures</h2>
@@ -103,7 +226,6 @@
             </div>
         </section>
 
-        <!-- Applications Section -->
         <section id="applications">
             <div class="theory-card">
                 <h2>4. Practical Applications</h2>
@@ -133,7 +255,6 @@
             </div>
         </section>
 
-        <!-- Challenges Section -->
         <section id="challenges">
             <div class="theory-card">
                 <h2>5. Technical Challenges</h2>
