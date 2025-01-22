@@ -152,22 +152,23 @@
         <section id="introduction">
             <div class="theory-card">
                 <h2>1. Fundamental Premise</h2>
-                <p><span class="key-term">Critical Symmetry Theory (CST)</span> proposes that the Riemann zeta function's non-trivial zeros are constrained to Re(s) = ½ through three synergistic mechanisms:</p>
-                
+                <p><span class="key-term">Critical Symmetry Theory (CST)</span> proposes a geometric and dynamical framework to solve the Riemann Hypothesis by focusing on three primary mechanisms that govern the distribution of the non-trivial zeros of the Riemann zeta function.</p>
+                <p>The Riemann Hypothesis suggests that all non-trivial zeros of the Riemann zeta function lie on the line <em>Re(s) = 1/2</em>. CST connects this hypothesis to an advanced geometric structure and dynamical processes that dictate the behaviour of these zeros.</p>
+
                 <div class="grid">
                     <div class="definition-box">
                         <h3>Geometric Constraint</h3>
-                        <p>Embedding ζ(s) in a curved Kähler manifold where the critical line is the only stable geodesic, enforcing the zeros to lie along the line Re(s) = ½.</p>
+                        <p>The Riemann zeta function ζ(s) is embedded within a <span class="key-term">curved Kähler manifold</span>, where the critical line (Re(s) = 1/2) is represented as the only stable geodesic. This introduces a deep interaction between the geometry of the manifold and the analytic properties of ζ(s), constraining the zeros to the critical line.</p>
                     </div>
                     
                     <div class="definition-box">
                         <h3>Dynamic Enforcement</h3>
-                        <p>Zeta Flow: A gradient system minimizing |ζ(s)|², steering the non-trivial zeros back to the critical line whenever they deviate.</p>
+                        <p>Through a process known as <span class="key-term">Zeta Flow</span>, the function ζ(s) is subject to a dynamical system that minimises |ζ(s)|². This dynamic approach strengthens the notion that the non-trivial zeros can be driven towards the critical line, reinforcing the idea that they lie on Re(s) = 1/2.</p>
                     </div>
                     
                     <div class="definition-box">
                         <h3>Symmetry Principle</h3>
-                        <p>The Zeta-Mirror duality annihilates non-critical zeros by ensuring any deviation from the critical line results in symmetry violations that are corrected.</p>
+                        <p>In CST, a <span class="key-term">Zeta-Mirror duality</span> exists, a symmetry that acts to annihilate non-critical zeros of ζ(s), ensuring that only those that lie on the critical line remain. This duality mirrors the structure of the complex plane in a way that eliminates extraneous solutions.</p>
                     </div>
                 </div>
             </div>
@@ -177,26 +178,19 @@
         <section id="geometry">
             <div class="theory-card">
                 <h2>2. Geometric Formulation</h2>
+                <p>The geometric formulation of CST requires constructing a Kähler manifold <span class="math">M</span> that encodes the properties of the Riemann zeta function ζ(s) within its curvature.</p>
                 <div class="diagram"></div>
                 
                 <h3>2.1 Kähler Manifold Construction</h3>
-                <p>The central object is a 2D complex manifold <span class="math">M</span> with metric:</p>
-                <div class="math">
-                    g_{iȷ̄} = ∂_i∂_ȷ̄ log|ζ(s)|²
-                </div>
-                <p>Key properties:</p>
-                <ul>
-                    <li>Metric determinant det(g) → ∞ precisely at ζ(s) zeros, signifying the singularity.</li>
-                    <li>Ricci curvature R = -∂∂̄ log det(g), enforcing the attraction of the zeros to the critical line.</li>
-                    <li>The critical line becomes a minimal surface in the manifold, naturally attracting the non-trivial zeros.</li>
-                </ul>
-
+                <p>The central object in CST is a 2D complex manifold <span class="math">M</span>, which is endowed with a Kähler metric. This metric is defined in such a way that the critical line of ζ(s) (Re(s) = 1/2) becomes a minimal geodesic. The construction is crucial as it geometrically constrains the non-trivial zeros of ζ(s) to this line.</p>
+                <p>The metric <span class="math">g_{iȷ̄} = ∂_i∂_ȷ̄ log|ζ(s)|²</span> describes the curvature of the manifold, and its determinant behaves in a special way, blowing up at the zeros of ζ(s), ensuring that these points are geometrically “attracted” to the critical line.</p>
+                
                 <h3>2.2 Curvature-Driven Attraction</h3>
-                <p>The scalar curvature creates potential wells:</p>
+                <p>The scalar curvature <span class="math">R</span> of the manifold creates potential wells, leading to the attraction of the non-trivial zeros of ζ(s) towards the critical line. The potential for this attraction is given by the expression:</p>
                 <div class="math">
                     V(s) = ¼R - ½Δ_g log|ζ(s)|
                 </div>
-                <p>Resulting in curvature-driven flow that guides deviations of zeros back to Re(s) = ½:</p>
+                <p>This is essential for understanding the behaviour of the zeros under the influence of the manifold's curvature. The resulting flow can be described by the following equation:</p>
                 <div class="math">
                     ∇_g V · t > 0 ∀ t ∦ critical line
                 </div>
@@ -207,14 +201,52 @@
         <section id="dynamics">
             <div class="theory-card">
                 <h2>3. Zeta Flow Dynamics</h2>
+                <p>The dynamics of CST involve a gradient descent process that minimizes the squared modulus of ζ(s). This process is represented by the <span class="key-term">Zeta Flow</span> equation, which describes the evolution of ζ(s) over time.</p>
                 
                 <h3>3.1 Flow Equation Derivation</h3>
-                <p>The flow is derived from the gradient descent on |ζ(s)|²:</p>
+                <p>The flow is driven by a gradient descent algorithm that minimises |ζ(s)|², which is the magnitude of the Riemann zeta function. This gives rise to the following equation for the flow of s:</p>
                 <div class="math">
                     ds/dτ = -g^{iȷ̄} (∂_{ȷ̄}|ζ(s)|²) ∂_i
                 </div>
-                <p>Which simplifies to:</p>
+                <p>This equation represents the time evolution of the complex variable s under the flow, where τ is the time parameter. It expresses how the points on the complex plane move under the influence of the Zeta Flow.</p>
+
+                <h3>3.2 Stability Analysis</h3>
+                <p>Linearising the system around the critical line Re(s) = 1/2, we obtain the Jacobian matrix of the flow:</p>
                 <div class="math">
-                    dσ/dτ = -2(σ - ½)|ζ(s)|²
+                    J = -2|ζ(s)|² I + O(σ - ½)
                 </div>
-                <p>Where σ = Re
+                <p>All eigenvalues of this matrix are negative definite for σ ≠ ½, ensuring that the flow drives the system towards stability along the critical line.</p>
+            </div>
+        </section>
+
+        <!-- Validation Framework -->
+        <section id="validation">
+            <div class="theory-card">
+                <h2>4. Verification Protocol</h2>
+                <p>To verify the correctness of CST, we require both analytic and computational methods. The following sections outline the protocol for validating the theory.</p>
+
+                <h3>4.1 Analytic Proofs Required</h3>
+                <ul>
+                    <li>Global existence of Zeta Flow solutions, ensuring that the flow always converges and does not encounter singularities.</li>
+                    <li>Completeness of the Kähler metric, ensuring that the manifold is smooth and well-behaved across the entire complex plane.</li>
+                    <li>Spectral gap analysis for the Hamiltonian operator Ĥ that governs the dynamics of ζ(s), ensuring that the flow leads to a stable configuration with no other competing critical lines.</li>
+                </ul>
+
+                <h3>4.2 Computational Verification</h3>
+                <div class="math">
+                    Algorithm: ZetaFlow(σ₀, t₀, τ_max):
+                        While τ < τ_max:
+                            σ_{n+1} = σ_n - η∇σ |ζ(σ+it₀)|²
+                            If |σ_{n+1}-½| < ε: Break
+                </div>
+                <p>In computational terms, the Zeta Flow can be approximated numerically by iterating the Zeta Flow equation. Convergence tests should be performed for large imaginary parts of s (Im(s) > 10³⁰) to ensure the theory holds in all regions of the complex plane.</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>Critical Symmetry Theory Working Group © 2023</p>
+        <p>Contact: research@cst-theory.org | Technical White Paper v2.1.4</p>
+    </footer>
+</body>
+</html>
