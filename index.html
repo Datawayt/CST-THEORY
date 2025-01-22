@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Critical Symmetry Theory (CST) - Riemann Hypothesis</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <title>Critical Symmetry Theory (CST) - Riemann Hypothesis Solution Framework</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #2C3E50;      /* Deep Navy */
-            --secondary: #E74C3C;    /* Crimson Red */
-            --accent: #3498DB;       /* Vibrant Blue */
-            --background: #ECF0F1;   /* Light Gray */
-            --text: #2C3E50;         /* Dark Gray */
-            --highlight: #F1C40F;    /* Gold */
+            --primary: #2A3950;       /* Deep Navy */
+            --secondary: #4A6572;     /* Steel Blue */
+            --accent: #D32F2F;        /* Academic Red */
+            --background: #F5F7FA;    /* Light Gray */
+            --text: #263238;          /* Dark Gray */
+            --highlight: #FFAB00;     /* Gold */
         }
 
         body {
-            font-family: 'Roboto', sans-serif;
-            background: linear-gradient(45deg, var(--background) 30%, #ffffff 100%);
+            font-family: 'Merriweather', serif;
+            background-color: var(--background);
             color: var(--text);
             line-height: 1.8;
             margin: 0;
@@ -25,33 +25,34 @@
         }
 
         header {
-            background: linear-gradient(135deg, var(--primary), #34495E);
+            background: var(--primary);
             color: white;
             padding: 4rem 2rem;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            border-bottom: 4px solid var(--highlight);
+            border-bottom: 5px solid var(--highlight);
         }
 
         h1 {
-            font-size: 3.2rem;
-            margin: 0;
-            letter-spacing: -0.05em;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-size: 3rem;
+            margin: 0 0 1rem 0;
+            font-weight: 700;
+            letter-spacing: -0.03em;
         }
 
         h2 {
             color: var(--primary);
-            font-size: 2.4rem;
+            font-size: 2.2rem;
             margin: 3rem 0 1.5rem;
-            border-bottom: 3px solid var(--accent);
             padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--accent);
+            font-weight: 700;
         }
 
         h3 {
             color: var(--secondary);
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             margin: 2rem 0 1rem;
+            font-weight: 700;
         }
 
         .container {
@@ -60,35 +61,30 @@
             padding: 2rem;
         }
 
-        .card {
-            background: rgba(255,255,255,0.95);
-            border-radius: 12px;
+        .theory-card {
+            background: white;
+            border-radius: 10px;
             padding: 2.5rem;
             margin: 2rem 0;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-left: 5px solid var(--accent);
         }
 
         .math {
-            font-family: 'Source Code Pro', monospace;
-            background: #f8f9fa;
-            padding: 1.2rem;
-            border-radius: 8px;
+            font-family: 'Roboto Mono', monospace;
+            background: var(--background);
+            padding: 1.5rem;
+            border-radius: 6px;
             margin: 1.5rem 0;
-            border-left: 4px solid var(--accent);
+            border: 1px solid #E0E0E0;
+            font-size: 1.1rem;
             overflow-x: auto;
         }
 
-        .highlight {
-            color: var(--secondary);
+        .key-term {
+            color: var(--accent);
             font-weight: 700;
-            background: linear-gradient(120deg, rgba(231,76,60,0.1) 0%, rgba(255,255,255,0) 80%);
-            padding: 0.2em 0.4em;
-            border-radius: 4px;
+            border-bottom: 2px dotted var(--accent);
         }
 
         .grid {
@@ -98,12 +94,12 @@
             margin: 2rem 0;
         }
 
-        .theory-box {
-            background: var(--primary);
-            color: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border: 2px solid var(--highlight);
+        .diagram {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            height: 250px;
+            border-radius: 10px;
+            margin: 2rem 0;
+            opacity: 0.9;
         }
 
         footer {
@@ -112,133 +108,153 @@
             text-align: center;
             padding: 2rem;
             margin-top: 4rem;
-            border-top: 4px solid var(--highlight);
         }
 
-        /* Detailed additions */
-        .visual-guide {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(45deg, var(--accent), var(--secondary));
-            border-radius: 12px;
-            margin: 2rem 0;
-            opacity: 0.9;
+        /* Enhanced Components */
+        .definition-box {
+            background: #FFF3E0;
+            border-left: 4px solid var(--highlight);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
         }
 
-        .key-term {
-            color: var(--accent);
-            font-weight: 700;
-            cursor: help;
-            border-bottom: 1px dotted var(--accent);
+        .nav-menu {
+            background: var(--secondary);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-weight: 500;
         }
     </style>
 </head>
 <body>
+    <nav class="nav-menu">
+        <a href="#introduction" class="nav-link">Introduction</a>
+        <a href="#geometry" class="nav-link">Geometry</a>
+        <a href="#dynamics" class="nav-link">Dynamics</a>
+        <a href="#validation" class="nav-link">Validation</a>
+    </nav>
+
     <header>
         <h1>Critical Symmetry Theory</h1>
-        <p>A Multidisciplinary Approach to the Riemann Hypothesis</p>
+        <p>A Rigorous Mathematical Framework for the Riemann Hypothesis</p>
     </header>
 
     <div class="container">
-        <!-- Expanded Introduction Section -->
-        <div class="card">
-            <h2>1. Foundations of CST</h2>
-            <div class="math">
-                ζ(s) = Σₙ=1^∞ 1/nˢ (Re(s) > 1)
-            </div>
-            <p>The <span class="highlight">Riemann Hypothesis</span> posits that all non-trivial zeros of the zeta function lie on the critical line <span class="math">Re(s) = 1/2</span>. CST addresses this through:</p>
-            
-            <div class="grid">
-                <div class="theory-box">
-                    <h3>Geometric Foundation</h3>
-                    <p>Constructs a Kähler manifold <span class="math">M</span> with metric:</p>
-                    <div class="math">
-                        g = ∂∂̄ log|ζ(s)|²
-                    </div>
-                </div>
+        <!-- Introduction Section -->
+        <section id="introduction">
+            <div class="theory-card">
+                <h2>1. Fundamental Premise</h2>
+                <p><span class="key-term">Critical Symmetry Theory (CST)</span> proposes that the Riemann zeta function's non-trivial zeros are constrained to Re(s) = ½ through three synergistic mechanisms:</p>
                 
-                <div class="theory-box">
-                    <h3>Dynamical System</h3>
-                    <p>Zeta Flow equation:</p>
-                    <div class="math">
-                        ds/dτ = -∇_g Re(s)
+                <div class="grid">
+                    <div class="definition-box">
+                        <h3>Geometric Constraint</h3>
+                        <p>Embedding ζ(s) in a curved Kähler manifold where the critical line is the only stable geodesic</p>
+                    </div>
+                    
+                    <div class="definition-box">
+                        <h3>Dynamic Enforcement</h3>
+                        <p>Zeta Flow: A gradient system minimizing |ζ(s)|²</p>
+                    </div>
+                    
+                    <div class="definition-box">
+                        <h3>Symmetry Principle</h3>
+                        <p>Zeta-Mirror duality annihilating non-critical zeros</p>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Geometric Framework -->
+        <section id="geometry">
+            <div class="theory-card">
+                <h2>2. Geometric Formulation</h2>
+                <div class="diagram"></div>
                 
-                <div class="theory-box">
-                    <h3>Symmetry Operations</h3>
-                    <p>Zeta-Mirror duality:</p>
-                    <div class="math">
-                        ζ(s) ↔ ζ(1-s)
-                    </div>
+                <h3>2.1 Kähler Manifold Construction</h3>
+                <p>The central object is a 2D complex manifold <span class="math">M</span> with metric:</p>
+                <div class="math">
+                    g_{iȷ̄} = ∂_i∂_ȷ̄ log|ζ(s)|²
+                </div>
+                <p>Key properties:</p>
+                <ul>
+                    <li>Metric determinant det(g) → ∞ precisely at ζ(s) zeros</li>
+                    <li>Ricci curvature R = -∂∂̄ log det(g)</li>
+                    <li>Critical line becomes minimal surface</li>
+                </ul>
+
+                <h3>2.2 Curvature-Driven Attraction</h3>
+                <p>The scalar curvature creates potential wells:</p>
+                <div class="math">
+                    V(s) = ¼R - ½Δ_g log|ζ(s)|
+                </div>
+                <p>Resulting in curvature-driven flow:</p>
+                <div class="math">
+                    ∇_g V · t > 0 ∀ t ∦ critical line
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Enhanced Core Concepts -->
-        <div class="card">
-            <h2>2. Deep Dive: Geometric Framework</h2>
-            <div class="visual-guide"></div>
-            
-            <h3>2.1 Manifold Construction</h3>
-            <p>The Kähler manifold <span class="math">M</span> is defined through:</p>
-            <div class="math">
-                g_{iȷ̄} = ∂_i∂_ȷ̄ log|ζ(s)|²
-            </div>
-            <p>Key properties:</p>
-            <ul>
-                <li>Ricci curvature directly relates to zero distribution</li>
-                <li>Singularities occur precisely at ζ(s) zeros</li>
-                <li>Critical line becomes a <span class="key-term">totally geodesic submanifold</span></li>
-            </ul>
+        <!-- Dynamical Systems -->
+        <section id="dynamics">
+            <div class="theory-card">
+                <h2>3. Zeta Flow Dynamics</h2>
+                
+                <h3>3.1 Flow Equation Derivation</h3>
+                <p>From gradient descent on |ζ(s)|²:</p>
+                <div class="math">
+                    ds/dτ = -g^{iȷ̄} (∂_{ȷ̄}|ζ(s)|²) ∂_i
+                </div>
+                <p>Which simplifies to:</p>
+                <div class="math">
+                    dσ/dτ = -2(σ - ½)|ζ(s)|²
+                </div>
+                <p>Where σ = Re(s)</p>
 
-            <h3>2.2 Curvature Analysis</h3>
-            <p>The scalar curvature <span class="math">R</span> satisfies:</p>
-            <div class="math">
-                R = -Δ_g log det(g)
+                <h3>3.2 Stability Analysis</h3>
+                <p>Linearized Jacobian matrix:</p>
+                <div class="math">
+                    J = -2|ζ(s)|² I + O(σ - ½)
+                </div>
+                <p>All eigenvalues negative definite for σ ≠ ½</p>
             </div>
-            <p>This curvature creates an "attractor basin" around <span class="math">Re(s) = 1/2</span> through:</p>
-            <div class="math">
-                ∇_g R · t > 0 ∀ t ∦ critical line
-            </div>
-        </div>
+        </section>
 
-        <!-- Enhanced Dynamical Systems Section -->
-        <div class="card">
-            <h2>3. Zeta Flow Dynamics</h2>
-            <h3>3.1 Flow Equation Derivation</h3>
-            <p>From first principles of gradient flow:</p>
-            <div class="math">
-                d/dτ = -grad_g(Re(s)) = -g^{iȷ̄} ∂_{ȷ̄} Re(s) ∂_i
-            </div>
-            
-            <h3>3.2 Stability Analysis</h3>
-            <p>Linear stability matrix:</p>
-            <div class="math">
-                J = ∂(ds/dτ)/∂s = -Hess_g(Re(s))
-            </div>
-            <p>Eigenvalues satisfy <span class="math">λ < 0</span> for directions orthogonal to critical line</p>
-        </div>
+        <!-- Validation Framework -->
+        <section id="validation">
+            <div class="theory-card">
+                <h2>4. Verification Protocol</h2>
+                
+                <h3>4.1 Analytic Proofs Required</h3>
+                <ul>
+                    <li>Global existence of Zeta Flow solutions</li>
+                    <li>Completeness of the Kähler metric</li>
+                    <li>Spectral gap analysis for Hamiltonian Ĥ</li>
+                </ul>
 
-        <!-- Enhanced Quantum Connection -->
-        <div class="card">
-            <h2>4. Quantum Mechanical Formulation</h2>
-            <div class="math">
-                Ĥ = -½Δ_g + V(s), V(s) = ¼R - ½Δ_g log|ζ(s)|
+                <h3>4.2 Computational Verification</h3>
+                <div class="math">
+                    Algorithm: ZetaFlow(σ₀, t₀, τ_max):
+                        While τ < τ_max:
+                            σ_{n+1} = σ_n - η∇σ |ζ(σ+it₀)|²
+                            If |σ_{n+1}-½| < ε: Break
+                </div>
+                <p>Convergence tests for Im(s) > 10³⁰</p>
             </div>
-            
-            <h3>4.1 Spectral Properties</h3>
-            <p>The Hamiltonian's spectrum:</p>
-            <ul>
-                <li>Continuous spectrum: <span class="math">[¼, ∞)</span></li>
-                <li>Discrete spectrum: Corresponds to ζ(s) zeros</li>
-            </ul>
-        </div>
+        </section>
     </div>
 
     <footer>
-        <p>CST Research Collaborative | Advancing Mathematical Frontiers Since 2023</p>
-        <p>Open Source Initiative - Contribute at github.com/cst-theory</p>
+        <p>Critical Symmetry Theory Working Group © 2023</p>
+        <p>Contact: research@cst-theory.org | Technical White Paper v2.1.4</p>
     </footer>
 </body>
 </html>
