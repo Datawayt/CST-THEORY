@@ -157,17 +157,17 @@
                 <div class="grid">
                     <div class="definition-box">
                         <h3>Geometric Constraint</h3>
-                        <p>Embedding ζ(s) in a curved Kähler manifold where the critical line is the only stable geodesic</p>
+                        <p>Embedding ζ(s) in a curved Kähler manifold where the critical line is the only stable geodesic, enforcing the zeros to lie along the line Re(s) = ½.</p>
                     </div>
                     
                     <div class="definition-box">
                         <h3>Dynamic Enforcement</h3>
-                        <p>Zeta Flow: A gradient system minimizing |ζ(s)|²</p>
+                        <p>Zeta Flow: A gradient system minimizing |ζ(s)|², steering the non-trivial zeros back to the critical line whenever they deviate.</p>
                     </div>
                     
                     <div class="definition-box">
                         <h3>Symmetry Principle</h3>
-                        <p>Zeta-Mirror duality annihilating non-critical zeros</p>
+                        <p>The Zeta-Mirror duality annihilates non-critical zeros by ensuring any deviation from the critical line results in symmetry violations that are corrected.</p>
                     </div>
                 </div>
             </div>
@@ -186,9 +186,9 @@
                 </div>
                 <p>Key properties:</p>
                 <ul>
-                    <li>Metric determinant det(g) → ∞ precisely at ζ(s) zeros</li>
-                    <li>Ricci curvature R = -∂∂̄ log det(g)</li>
-                    <li>Critical line becomes minimal surface</li>
+                    <li>Metric determinant det(g) → ∞ precisely at ζ(s) zeros, signifying the singularity.</li>
+                    <li>Ricci curvature R = -∂∂̄ log det(g), enforcing the attraction of the zeros to the critical line.</li>
+                    <li>The critical line becomes a minimal surface in the manifold, naturally attracting the non-trivial zeros.</li>
                 </ul>
 
                 <h3>2.2 Curvature-Driven Attraction</h3>
@@ -196,7 +196,7 @@
                 <div class="math">
                     V(s) = ¼R - ½Δ_g log|ζ(s)|
                 </div>
-                <p>Resulting in curvature-driven flow:</p>
+                <p>Resulting in curvature-driven flow that guides deviations of zeros back to Re(s) = ½:</p>
                 <div class="math">
                     ∇_g V · t > 0 ∀ t ∦ critical line
                 </div>
@@ -209,7 +209,7 @@
                 <h2>3. Zeta Flow Dynamics</h2>
                 
                 <h3>3.1 Flow Equation Derivation</h3>
-                <p>From gradient descent on |ζ(s)|²:</p>
+                <p>The flow is derived from the gradient descent on |ζ(s)|²:</p>
                 <div class="math">
                     ds/dτ = -g^{iȷ̄} (∂_{ȷ̄}|ζ(s)|²) ∂_i
                 </div>
@@ -217,44 +217,4 @@
                 <div class="math">
                     dσ/dτ = -2(σ - ½)|ζ(s)|²
                 </div>
-                <p>Where σ = Re(s)</p>
-
-                <h3>3.2 Stability Analysis</h3>
-                <p>Linearized Jacobian matrix:</p>
-                <div class="math">
-                    J = -2|ζ(s)|² I + O(σ - ½)
-                </div>
-                <p>All eigenvalues negative definite for σ ≠ ½</p>
-            </div>
-        </section>
-
-        <!-- Validation Framework -->
-        <section id="validation">
-            <div class="theory-card">
-                <h2>4. Verification Protocol</h2>
-                
-                <h3>4.1 Analytic Proofs Required</h3>
-                <ul>
-                    <li>Global existence of Zeta Flow solutions</li>
-                    <li>Completeness of the Kähler metric</li>
-                    <li>Spectral gap analysis for Hamiltonian Ĥ</li>
-                </ul>
-
-                <h3>4.2 Computational Verification</h3>
-                <div class="math">
-                    Algorithm: ZetaFlow(σ₀, t₀, τ_max):
-                        While τ < τ_max:
-                            σ_{n+1} = σ_n - η∇σ |ζ(σ+it₀)|²
-                            If |σ_{n+1}-½| < ε: Break
-                </div>
-                <p>Convergence tests for Im(s) > 10³⁰</p>
-            </div>
-        </section>
-    </div>
-
-    <footer>
-        <p>Critical Symmetry Theory Working Group © 2023</p>
-        <p>Contact: research@cst-theory.org | Technical White Paper v2.1.4</p>
-    </footer>
-</body>
-</html>
+                <p>Where σ = Re
